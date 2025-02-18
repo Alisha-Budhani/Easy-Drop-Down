@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="dropdown">
+            <div class="dd-question">
+                Select your favourite food?
+            </div>
+            <div class="dropdown-btn">
+                <i class="fa-solid fa-caret-down"></i>
+                Favourite Food
+            </div>
+            <div class="dropdown-content">
+                <div onclick="getDropDownItem('Pizza')" class="dd-item">Pizza</div>
+                <div onclick="getDropDownItem('Burger')" class="dd-item">Burger</div>
+                <div onclick="getDropDownItem('Tacco')" class="dd-item">Tacco</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="dropdown.js"></script>
+</html>

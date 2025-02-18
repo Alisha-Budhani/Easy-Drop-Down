@@ -1,0 +1,142 @@
+/* dropdown.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dropdown {
+    position: relative;
+    width: 250px;
+    background: #fff;
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown:hover {
+    transform: translateY(-5px);
+}
+
+.dd-question {
+    padding: 15px;
+    background: #6e45e2;
+    color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dd-question i {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dropdown-btn {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+    background: #f3f3f3;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.dropdown-content .dd-item {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-content .dd-item:hover {
+    background: #6e45e2;
+    color: #fff;
+}
+
+.dropdown-content.show {
+    max-height: 200px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn.show .fa-caret-down {
+    transform: rotate(180deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dd-item i {
+    color: #6e45e2;
+}
